@@ -1,4 +1,19 @@
-<p>
-  {{book.id}} - {{book.name}}
-  <input [(ngModel)]="book.name" placeholder="name">
-</p>
+<h2>My Bibliography</h2>
+
+<ul class="books">
+  <li *ngFor="let book of bibitems"
+      [class.selected]="book === selectedBook"
+      (click)="onSelect(book)">
+    <span class="badge">{{book.id}}</span> {{book.name}}
+  </li>
+</ul>
+
+<div *ngIf="selectedBook">
+  <h2>{{ selectedBook.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{selectedBook.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedBook.name" placeholder="name">
+    </label>
+  </div>
+</div>
