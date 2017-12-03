@@ -1,5 +1,7 @@
 <h2>My Bibliography</h2>
 
+
+<div>
 <ul class="books">
   <li *ngFor="let book of bibitems" >
     <a routerLink="/bibitem/{{book.id}}">
@@ -7,6 +9,15 @@
     </a>
   </li>
 </ul>
+<div>
 
 
-
+<div>
+  <label>Book name:
+    <input #bibItem />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(bibItem.value); bibItem.value=''">
+    add
+  </button>
+</div>

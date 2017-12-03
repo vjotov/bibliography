@@ -20,4 +20,13 @@ export class BibliotequeComponent implements OnInit {
     this.bibitemService.getBibItems()
         .subscribe(bibitems => this.bibitems = bibitems);
   }
+
+  add(name: string): void {
+    name = name.trim();
+    if(!name) { return; }
+    this.bibitemService.addBibItem({ name } as BibItem)
+      .subscribe(bibItem => {
+        this.bibitems.push(bibItem
+      });
+  }
 }

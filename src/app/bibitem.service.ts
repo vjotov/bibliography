@@ -44,6 +44,13 @@ export class BibItemService {
     );
   }
 
+  addBibItem(bibItem: BibItem) Observable<BibItem>{
+    return this.http.push(this.bibItemsUrl, bibItem, httpOptions).pipe(
+      tap((bibItem: bibItem) => this.log("added bibItem with id=${bibItem.id}")),
+      catchError(this.handleError<BibItem>("addBibItem"))
+    );
+  }
+
   /** Log a HeroService message with the MessageService */
   private log(message: string) {
     this.messageService.add('BibItemService: ' + message);

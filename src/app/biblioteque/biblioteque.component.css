@@ -64,3 +64,8 @@
 .books a:hover {
   color:#607D8B;
 }
+
+.content {
+    float: left;
+    clear: none;
+}
