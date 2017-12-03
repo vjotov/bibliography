@@ -10,6 +10,7 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { BibitemService } from './bibitem.service';
 import { MessageService } from './message.service';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { MessageService } from './message.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule 
+    FormsModule,
+    AppRoutingModule 
   ],
   providers: [BibitemService, MessageService ],
   bootstrap: [AppComponent]
