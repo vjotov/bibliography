@@ -1,12 +1,12 @@
 <h2>My Bibliography</h2>
 
 <ul class="books">
-  <li *ngFor="let book of bibitems"
-      [class.selected]="book === selectedBook"
-      (click)="onSelect(book)">
-    <span class="badge">{{book.id}}</span> {{book.name}}
+  <li *ngFor="let book of bibitems" >
+    <a routerLink="/bibitem/{{book.id}}">
+      <span class="badge">{{book.id}}</span> {{book.name}}
+    </a>
   </li>
 </ul>
 
-<app-book-detail [book]="selectedBook"></app-book-detail>
+
 

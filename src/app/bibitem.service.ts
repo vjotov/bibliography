@@ -7,12 +7,17 @@ import { BibItem } from './bibitem';
 import { BIBITEMS } from './mock-bibitems';
 
 @Injectable()
-export class BibitemService {
+export class BibItemService {
 
   constructor(private messageService: MessageService) { }
 
   getBibItems(): Observable<BibItem[]> {
     this.messageService.add("Bibliography Items are retrived");
     return of (BIBITEMS);
+  }
+
+  getBibItem(id: number): Observable<BibItem> {
+    this.messageService.add(`BibitemService: fetch bibItem id=${id}`);
+    return of(BIBITEMS.find(bibItem => bibItem.id === id));
   }
 }

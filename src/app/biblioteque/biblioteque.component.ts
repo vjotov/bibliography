@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BibItem } from '../bibitem';
-import { BibitemService } from '../bibitem.service';
+import { BibItemService } from '../bibitem.service';
 
 @Component({
   selector: 'app-biblioteque',
@@ -8,17 +8,12 @@ import { BibitemService } from '../bibitem.service';
   styleUrls: ['./biblioteque.component.css']
 })
 export class BibliotequeComponent implements OnInit {
-  bibitems: BibItem[];
-  selectedBook: BibItem;
+  bibitems: BibItem[] = [];
     
-  constructor(private bibitemService: BibitemService) { }
+  constructor(private bibitemService: BibItemService) { }
 
   ngOnInit() {
     this.getBibItems();
-  }
-
-  onSelect(book: BibItem): void {
-    this.selectedBook = book;
   }
 
   getBibItems(): void {
