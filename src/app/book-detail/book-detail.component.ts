@@ -30,6 +30,11 @@ export class BookDetailComponent implements OnInit {
   }
 
   goBack(): void {
-  this.location.back();
-}
+    this.location.back();
+  }
+
+  save(): void {
+      this.bibItemService.updateBibItem(this.bibItem)
+        .subscribe(() => this.goBack());
+  }
 }
