@@ -14,7 +14,7 @@
 .books li {
   cursor: pointer;
   position: relative;
-  left: 0;
+  left: 0;  
   background-color: #EEE;
   margin: .5em;
   padding: .3em 0;
@@ -58,7 +58,7 @@
   text-decoration: none;
   position: relative;
   display: block;
-  width: 250px;
+  width: 350px;
 }
  
 .books a:hover {
