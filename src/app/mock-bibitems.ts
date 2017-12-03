@@ -1,4 +1,5 @@
 import { BibItem } from './bibitem';
+// Deprecated
 
 export const BIBITEMS:BibItem[] = [
   {id:1, name: "The qube"},
