@@ -7,6 +7,8 @@
     <a routerLink="/bibitem/{{book.id}}">
       <span class="badge">{{book.id}}</span> {{book.name}}
     </a>
+    <button class="delete" title="delete bibItem"
+      (click)="delete(book)">x</button>
   </li>
 </ul>
 <div>

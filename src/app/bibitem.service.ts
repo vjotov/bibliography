@@ -51,6 +51,16 @@ export class BibItemService {
     );
   }
 
+  deleteBibItem(bibItem: BibItem | number) Observable<BibItem>{
+    const id = typeof bibItem === 'number' ? bibItem : bibItem.id;
+    const url = `${this.bibItemsUrl}/${id}`;
+
+    return this.http.delete(url, httpOptions).pipe (
+      tap(_ => this.log(`deleted bibItem id=${id}`)),
+      catchError(this.handleError<BibItem>("deleteBibItem"))
+    );
+  }
+
   /** Log a HeroService message with the MessageService */
   private log(message: string) {
     this.messageService.add('BibItemService: ' + message);
